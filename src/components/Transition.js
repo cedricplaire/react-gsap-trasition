@@ -29,7 +29,7 @@ const TransitionComponent = ({ children }) => {
           gsap
             .timeline({ paused: true })
             .to(node, { scale: 0.6, duration: 0.4 })
-            .to(node, { xPercent: 100, autoAlpha: 0, duration: 0.4 })
+            .to(node, { xPercent: -100, autoAlpha: 0, duration: 0.4 })
             .play();
         }}
       >

@@ -12,8 +12,8 @@ export default function Scroll() {
       const boxes = gsap.utils.toArray('.box');
       boxes.forEach((box) => {
         gsap.to(box, {
-          x: "random(-100, 100, 50, true)",
-          y: "random(-100, 100, 50, true)",
+          x: randx,
+          y: randy,
           rotation: 360,
           scrollTrigger: {
             trigger: box,
@@ -21,6 +21,10 @@ export default function Scroll() {
             end: '20% 20%',
             scrub: 0.5,
             // markers: true,
+            onLeave: (self) => (
+              randx = gsap.utils.random(-300, 300, 50, true), 
+              randy = gsap.utils.random(-300, 300, 50, true)
+            ),
           },
         });
       });
